@@ -85,7 +85,7 @@
                 
                 await Promise.all([
                     mergeFiles("Index.pck", 1, 4),
-                    mergeFiles("Index.wasm", 1, 2)
+                    mergeFiles("Index.side.wasm", 1, 2)
                 ]);
 
                 if (typeof window.godotRunStart === 'function') {
