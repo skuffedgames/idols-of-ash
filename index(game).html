@@ -1,11 +1,10 @@
-<!-- shxyder -->
-<!-- ultimate game stash file -->
+<!-- Skuffedgames -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>Knock, Knock</title>
+    <title>Idols of Ash</title>
     <style>
         html, body, #canvas { margin: 0; padding: 0; border: 0; }
         body { color: white; background-color: black; overflow: hidden; touch-action: none; }
@@ -28,14 +27,14 @@
         (function() {
             'use strict';
            
-            const BASE_URL = 'https://cdn.jsdelivr.net/gh/shayderrr/portsv3@main/knockknock/';
+            const BASE_URL = 'https://cdn.jsdelivr.net/gh/skuffedgames/idols-of-ash/';
             const originalFetch = window.fetch;
             const mergedData = {}; 
             const pendingRequests = {}; 
 
             window.fetch = function(url, ...args) {
                 const urlString = url.toString();
-                if (urlString.includes("Knock, Knock.pck") || urlString.includes("Knock, Knock.wasm")) {
+                if (urlString.includes("Index.pck") || urlString.includes("Index.wasm")) {
                     const baseFileName = urlString.split('/').pop().split('?')[0]; 
 
                     if (mergedData[baseFileName]) {
@@ -85,8 +84,8 @@
                 document.getElementById('status-progress').style.display = 'block';
                 
                 await Promise.all([
-                    mergeFiles("Knock, Knock.pck", 1, 20),
-                    mergeFiles("Knock, Knock.wasm", 1, 2)
+                    mergeFiles("Index.pck", 1, 4),
+                    mergeFiles("Index.wasm", 1, 2)
                 ]);
 
                 if (typeof window.godotRunStart === 'function') {
@@ -104,13 +103,13 @@
         <div id="status-notice">Locating files...</div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/shayderrr/portsv3@main/knockknock/Knock,%20Knock.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/skuffedgames/idols-of-ash@main/Index.js"></script>
     <script>
         const GODOT_CONFIG = {
             "args":[],
             "canvasResizePolicy":2,
-            "executable":"Knock, Knock",
-            "fileSizes":{"Knock, Knock.pck":376286304,"Knock, Knock.wasm":35740641},
+            "executable":"Index",
+            "fileSizes":{"Index.pck":80694908,"Index.wasm":1508102},
             "focusCanvas":true
         };
         const engine = new Engine(GODOT_CONFIG);
